@@ -16,5 +16,9 @@ else()
   target_link_libraries(browserselector PRIVATE ${FLTK_LIBRARIES})
 endif()
 
+if(WIN32)
+  target_link_libraries(browserselector PRIVATE shell32)
+endif()
+
 target_compile_features(browserselector PRIVATE cxx_std_17)
 
